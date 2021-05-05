@@ -73,38 +73,38 @@ function draw() {
     fill(0, 80, 200);
     circle(rS.x, rS.y, 100);
     circle(lS.x, lS.y, 100);
-  }
 
-  let leftElbow = pose.leftElbow;
-  let rightElbow = pose.rightElbow;
-  let distELbow = dist(rightElbow.x, rightElbow.y, leftElbow.x, leftElbow.y);
+    let leftElbow = pose.leftElbow;
+    let rightElbow = pose.rightElbow;
+    let distELbow = dist(rightElbow.x, rightElbow.y, leftElbow.x, leftElbow.y);
 
-  //orange circles for elbows
-  fill(255, 150, 0);
-  circle(rightElbow.x, rightElbow.y, 100);
-  circle(leftElbow.x, leftElbow.y, 100);
+    //orange circles for elbows
+    fill(255, 150, 0);
+    circle(rightElbow.x, rightElbow.y, 100);
+    circle(leftElbow.x, leftElbow.y, 100);
 
-  let lH = pose.leftHip;
-  let rH = pose.rightHip;
-  let dH = dist(rH.x, rH.y, lH.x, lH.y);
+    let lH = pose.leftHip;
+    let rH = pose.rightHip;
+    let dH = dist(rH.x, rH.y, lH.x, lH.y);
 
-  //purple circles for hips
-  fill(100, 60, 180);
-  circle(rH.x, rH.y, 150);
-  circle(lH.x, lH.y, 150);
+    //purple circles for hips
+    fill(100, 60, 180);
+    circle(rH.x, rH.y, 150);
+    circle(lH.x, lH.y, 150);
 
-  for (let i = 0; i < pose.keypoints.length; i++) {
-    let x = pose.keypoints[i].position.x;
-    let y = pose.keypoints[i].position.y;
-    fill(0, 80, 255);
-    circle(x, y, 40, 40);
-  }
+    for (let i = 0; i < pose.keypoints.length; i++) {
+      let x = pose.keypoints[i].position.x;
+      let y = pose.keypoints[i].position.y;
+      fill(0, 80, 255);
+      circle(x, y, 40);
+    }
 
-  for (let i = 0; i < skeleton.length; i++) {
-    let a = skeleton[i][0];
-    let b = skeleton[i][1];
-    strokeWeight(2);
-    stroke(255);
-    line(a.position.x, a.position.y, b.position.x, b.position.y);
+    for (let i = 0; i < skeleton.length; i++) {
+      let a = skeleton[i][0];
+      let b = skeleton[i][1];
+      strokeWeight(2);
+      stroke(255);
+      line(a.position.x, a.position.y, b.position.x, b.position.y);
+    }
   }
 }
