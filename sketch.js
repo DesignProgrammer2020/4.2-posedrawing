@@ -43,6 +43,16 @@ function draw() {
 
     let N = pose.nose;
 
+    //left whiskers
+    stroke(240);
+    line(N.x, N.y, N.x - 75, N.y - 25);
+    line(N.x, N.y, N.x - 75, N.y);
+    line(N.x, N.y, N.x - 75, N.y + 25);
+    //right whiskers
+    line(N.x, N.y, N.x + 75, N.y - 25);
+    line(N.x, N.y, N.x + 75, N.y);
+    line(N.x, N.y, N.x + 75, N.y + 25);
+
     //pink circle for nose
     fill(255, 150, 150);
     circle(N.x, N.y, 50);
